@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="WebApp_ID" version="2.5">
+  <display-name>servletContext</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+  
+  <context-param>
+    <param-name>context1</param-name>
+    <param-value>contextValue</param-value>
+  </context-param>
+  <context-param>
+    <param-name>breed</param-name>
+    <param-value>German Shepard</param-value>
+  </context-param>
+  <servlet>
+    <description></description>
+    <display-name>ServletContext1</display-name>
+    <servlet-name>ServletContext1</servlet-name>
+    <servlet-class>com.servletcontext.servletContext1.ServletContext1</servlet-class>
+    <init-param>
+  		<param-name>context3</param-name>
+    	<param-value>contextVenkateshValue</param-value>
+  	</init-param>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ServletContext1</servlet-name>
+    <url-pattern>/ServletContext1</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ServletContext2</display-name>
+    <servlet-name>ServletContext2</servlet-name>
+    <servlet-class>com.servletListener.ServletListener2</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ServletContext2</servlet-name>
+    <url-pattern>/ServletListener2</url-pattern>
+  </servlet-mapping>
+  <listener>
+	  <listener-class>com.servletListener.ListenerEg1
+	  </listener-class>
+  </listener>
+</web-app>

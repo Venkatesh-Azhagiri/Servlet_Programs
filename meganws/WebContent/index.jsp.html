@@ -1,0 +1,61 @@
+<html>
+<head>
+<title>Megan WS Pilot</title>
+<script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="js/jquery-ui.custom.min.js"></script>
+<script type="text/javascript" src="js/jquery.autocomplete.js"></script>
+<script type="text/javascript" src="js/thickbox.js"></script>
+<script type="text/javascript" src="js/jquery.tools.min.js"></script>
+<script type="text/javascript" src="js/calendar.js"></script>
+<script type="text/javascript" src="js/custom.js"></script>
+<script type="text/javascript" src="js/jquery.idTabs.js"></script>
+<script type="text/javascript" src="js/grid.locale-en.js"></script>
+<script type="text/javascript" src="js/jquery.tablednd.js"></script>
+<script type="text/javascript" src="js/jquery.jqGrid.min.js"></script>
+<script type="text/javascript" src="js/application.js"></script>
+<script type="text/javascript" src="js/jquery.rsv.js"></script>
+<script type="text/javascript" src="js/datadumper.js"></script>
+<script type="text/javascript" src="js/table2CSV.js"></script>
+<script type="text/javascript" src="js/jquery.download.js"></script>
+<script type="text/javascript">
+function getEmployeeInfo() {
+	
+	$.ajax(
+		       {
+		       type: "POST",
+			   url: 'accessMeganWS',
+			   data : document.wsRequestForm.reqData.value}
+			   )
+.done(function(data)  {
+	alert(data);
+	alert($.parseXML(data));
+	document.wsRequestForm.resData.value =data;
+		
+});
+	   
+}
+</script>
+</head>
+<body>
+<form name="wsRequestForm" action="accessMeganWS" method="post">
+<table>
+<tr>
+<td colspan="2"> Post Your XML Request Below
+</tr>
+<tr>
+<td colspan="2"><textarea rows="10" cols="100" name="reqData"></textarea></td>
+</tr>
+<tr>
+<td colspan="2">Your Response
+</tr>
+<tr>
+<td colspan="2"><textarea rows="50" cols="100" name="resData"></textarea></td>
+</tr>
+<tr>
+<td colspan="2"> <input type="button" value="Post" onclick="getEmployeeInfo()"/></td>
+</tr>
+
+</table>
+</form>
+</body>
+</html>
