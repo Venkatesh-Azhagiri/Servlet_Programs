@@ -55,8 +55,9 @@ public class JspFilter implements Filter {
 		else{
 			i=0;
 			System.out.println("filter else block");
-			RequestDispatcher rd = req.getRequestDispatcher("error.jsp");
-			rd.forward(req, res);
+			//RequestDispatcher rd = req.getRequestDispatcher("error.jsp");
+			//rd.forward(req, res);
+			res.sendRedirect("error.jsp");
 		}
 			
 	}
